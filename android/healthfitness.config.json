@@ -1,0 +1,8 @@
+{
+  "privacyPolicyUrl": "https://example.com/privacy-policy",
+  "permissions": {
+    "STEPS": "Read"
+  },
+  "disableBackgroundJobs": true,
+  "disableReadHealthDataHistory": true
+}

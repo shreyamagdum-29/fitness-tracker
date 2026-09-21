@@ -1,6 +1,5 @@
-
 import { Component } from '@angular/core';
-
+import { HealthFitness } from '@capacitor/health-fitness';
 import {
   IonHeader,
   IonToolbar,
@@ -27,8 +26,45 @@ export class HomePage {
 
   connectionStatus = 'Not connected';
 
-  connectWatch() {
-    this.connectionStatus = 'Searching for nearby devices...';
+  async connectWatch() {
+    try {
+      this.connectionStatus = 'Requesting Health Connect permission...';
+
+      await HealthFitness.requestHealthPermissions({
+        customPermissions: JSON.stringify([
+          {
+            Variable: 'STEPS',
+            AccessType: 'READ'
+          }
+        ]),
+        allVariables: JSON.stringify({
+          IsActive: false,
+          AccessType: 'READ'
+        }),
+        fitnessVariables: JSON.stringify({
+          IsActive: false,
+          AccessType: 'READ'
+        }),
+        healthVariables: JSON.stringify({
+          IsActive: false,
+          AccessType: 'READ'
+        }),
+        profileVariables: JSON.stringify({
+          IsActive: false,
+          AccessType: 'READ'
+        }),
+        workoutVariables: JSON.stringify({
+          IsActive: false,
+          AccessType: 'READ'
+        })
+      });
+
+      this.connectionStatus = 'Health Connect permission granted';
+
+    } catch (error) {
+      console.error(error);
+      this.connectionStatus = 'Health Connect permission failed';
+    }
   }
 
 }
