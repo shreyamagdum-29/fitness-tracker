@@ -1,29 +1,50 @@
-
 <ion-header>
   <ion-toolbar>
     <ion-title>Connect Watch</ion-title>
   </ion-toolbar>
 </ion-header>
-  
+
 <ion-content class="ion-padding">
+
   <div class="connect-container">
 
+    <!-- Watch Icon -->
     <div class="watch-icon">
       <ion-icon name="watch-outline"></ion-icon>
     </div>
 
+    <!-- Heading -->
     <h2>Connect Your Smartwatch</h2>
 
     <p>
       Connect your smartwatch to get started.
     </p>
 
+    <!-- Connect Button -->
     <ion-button expand="block" (click)="connectWatch()">
       <ion-icon name="bluetooth-outline" slot="start"></ion-icon>
       Connect Watch
     </ion-button>
 
-    <p class="status">{{ connectionStatus }}</p>
+    <!-- Connection Status -->
+    <p class="status">
+      {{ connectionStatus }}
+    </p>
+
+    <!-- Steps Card -->
+    <div class="steps-card">
+
+      <h3>Today's Steps</h3>
+
+      <div class="steps-value">
+        <ion-icon name="footsteps-outline"></ion-icon>
+        <span>{{ steps }}</span>
+      </div>
+
+      <p>Steps</p>
+
+    </div>
 
   </div>
+
 </ion-content>

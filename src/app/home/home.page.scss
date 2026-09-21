@@ -35,3 +35,37 @@ ion-button {
   margin-top: 20px;
   font-size: 14px;
 }
+.steps-card {
+  width: 100%;
+  max-width: 320px;
+  margin-top: 30px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 16px;
+  background: #f4f4f4;
+}
+
+.steps-card h3 {
+  margin: 0 0 15px;
+  font-size: 18px;
+}
+
+.steps-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.steps-value ion-icon {
+  font-size: 32px;
+}
+
+.steps-value span {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.steps-card p {
+  margin: 8px 0 0;
+}
