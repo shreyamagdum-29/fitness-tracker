@@ -107,11 +107,13 @@ export class HomePage {
 
       this.connectionStatus = 'Connected successfully';
 
+
     } catch (error) {
 
       console.error('Health Connect error:', error);
 
-      this.connectionStatus = 'Health Connect permission/data failed';
+      this.connectionStatus =
+        'ERROR: ' + JSON.stringify(error);
 
     }
   }
